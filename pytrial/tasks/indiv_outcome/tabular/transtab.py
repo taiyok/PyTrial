@@ -178,7 +178,7 @@ class TransTab(TabularIndivBase):
         if valid_data is not None: self._input_data_check(valid_data)
         self._fit_model(train_data=train_data, valid_data=valid_data)
 
-    def predict(self, test_data):
+    def predict(self, test_data, test_label):
         '''
         Make prediction probability based on the learned model.
 
@@ -197,7 +197,7 @@ class TransTab(TabularIndivBase):
         '''
         self._input_data_check(test_data)
         data = self._parse_input_data(test_data)
-        ypred = transtab.predict(self.model, x_test=data)
+        ypred = transtab.predict(self.model, x_test=data, y_test=test_label)
         return ypred
         
     def save_model(self, output_dir=None):
