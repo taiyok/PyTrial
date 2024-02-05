@@ -20,7 +20,7 @@ copulas
 rdt
 xgboost
 icd10-cm
-transtab
+git+https://github.com/taiyok/transtab.git#egg=transtab
 promptehr
 trial2vec
 accelerate
